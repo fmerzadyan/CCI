@@ -1,9 +1,8 @@
 package linkedlist;
 
-public class SinglyLinkedList<T> {
+public class DoublyLinkedList<T> {
     LinkedListNode<T> head;
-    
-    public SinglyLinkedList(){}
+    LinkedListNode<T> tail;
     
     void append(T data) {
         if (data == null) return;
@@ -14,13 +13,15 @@ public class SinglyLinkedList<T> {
         }
         
         LinkedListNode<T> end = new LinkedListNode<>(data);
-        
         LinkedListNode<T> n = head;
         
         while (n.next != null) {
             n = n.next;
         }
+        
         n.next = end;
+        end.prev = n;
+        tail = end;
     }
     
     void delete(T data) {
@@ -35,6 +36,7 @@ public class SinglyLinkedList<T> {
         while (n.next != null) {
             if (n.next.data.equals(data)) {
                 n.next = n.next.next;
+                n.next.prev = n.next;
                 return;
             }
             n = n.next;
@@ -50,22 +52,22 @@ public class SinglyLinkedList<T> {
         }
     }
     
-    class LinkedListNode<E> {
-        LinkedListNode<E> next;
-        E data;
+    class LinkedListNode<T> {
+        LinkedListNode<T> next, prev;
+        T data;
         
-        LinkedListNode(E data) {
+        LinkedListNode(T data) {
             this.data = data;
         }
     }
     
     public static void main(String[] args) {
-        SinglyLinkedList<String> list = new SinglyLinkedList<>();
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
         list.append("a");
         list.append("b");
         list.append("c");
         list.append("d");
-        list.delete("c");
+        list.delete("b");
         list.print();
     }
 }
