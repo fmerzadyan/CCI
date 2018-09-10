@@ -1,4 +1,4 @@
-package string.manipulation;
+package string.array.manipulation;
 
 public class OneAway {
     
