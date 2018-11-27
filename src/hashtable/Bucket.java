@@ -1,9 +1,11 @@
-package custom.hashtable;
+package hashtable;
+
+import custom.hashtable.HashTable;
 
 class Bucket<K, V> {
     private Node head;
     private Node tail;
-    // Indicates whether a slot (HashTable bucket) is already established and filled by at least one node.
+    // Indicates whether a slot (hashtable bucket) is already established and filled by at least one node.
     int size;
     
     void add(Node node) {

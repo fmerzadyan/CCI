@@ -1,4 +1,4 @@
-package custom.hashtable;
+package hashtable;
 
 class Entry<K, V> {
     private K key;

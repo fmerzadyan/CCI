@@ -1,4 +1,4 @@
-package string.array;
+package string;
 
 public class Compression {
     private static String compress(String originalString) {

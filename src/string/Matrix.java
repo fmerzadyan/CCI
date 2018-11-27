@@ -1,4 +1,4 @@
-package string.array;
+package string;
 
 public class Matrix {
     private static String[][] transposeMatrix(String[][] matrix) {

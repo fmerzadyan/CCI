@@ -1,4 +1,4 @@
-package custom.hashtable;
+package hashtable;
 
 public class HashTable<K, V> {
     private Array table;

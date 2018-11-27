@@ -1,4 +1,6 @@
-package custom.hashtable;
+package hashtable;
+
+import custom.hashtable.HashTable;
 
 public class Node {
     Entry entry;
